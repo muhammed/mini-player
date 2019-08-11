@@ -1,6 +1,7 @@
 body {
   // background: #e1e7ec;
   background: #dfe7ef;
+  font-family: "Bitter", serif;
 }
 
 * {
@@ -30,7 +31,8 @@ body {
   background: #eef3f7;
   width: 410px;
   height: 480px;
-  box-shadow: 0px 55px 75px -10px rgba(76, 70, 124, 0.5);
+  // box-shadow: 0px 55px 75px -10px rgba(76, 70, 124, 0.5);
+  box-shadow: 0px 55px 105px 10px rgba(76, 70, 124, 0.35);
   border-radius: 15px;
   padding: 30px;
 
@@ -50,6 +52,9 @@ body {
       height: 100%;
       object-fit: cover;
       border-radius: 15px;
+      box-shadow: 0px 10px 40px 0px rgba(76, 70, 124, 0.5);
+      user-select: none;
+      pointer-events: none;
     }
   }
 
@@ -76,9 +81,70 @@ body {
       &.-xl {
         margin-bottom: 0;
         font-size: 95px;
-        filter: drop-shadow(0 2px 8px rgba(172, 184, 204, 0.3));
+        // filter: drop-shadow(0 2px 8px rgba(172, 184, 204, 0.3));
+        filter: drop-shadow(0 9px 6px rgba(172, 184, 204, 0.35));
         color: #fff;
       }
     }
+  }
+}
+[v-cloak] {
+  display: none;
+}
+[v-cloak] > * {
+  display: none;
+}
+.progress {
+  width: 100%;
+  margin-top: -20px;
+  &__top {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  &__duration {
+    color: #71829e;
+    font-weight: 700;
+    font-size: 20px;
+    opacity: 0.7;
+  }
+  &__time {
+    margin-top: 2px;
+    color: #71829e;
+    font-weight: 700;
+    font-size: 16px;
+    opacity: 0.7;
+}
+}
+.progress__bar {
+  height: 6px;
+  width: 100%;
+  cursor: pointer;
+  background-color: #d0d8e6;
+  display: inline-block;
+  border-radius: 10px;
+}
+.progress__current {
+  height: inherit;
+  width: 0%;
+  background-color: #a3b3ce;
+  border-radius: 10px;
+}
+
+.album-info {
+  color: #71829e;
+  flex: 1;
+  padding-right: 60px;
+
+  &__name {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 12px;
+  }
+  &__track {
+    font-weight: 400;
+    font-size: 20px;
+    opacity: 0.7;
   }
 }
