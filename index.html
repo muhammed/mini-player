@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://meyerweb.com/eric/tools/css/reset/reset.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <title>Mini Player</title>
+</head>
+<body>
+    <div class="wrapper" id="app">
+        <div class="player">
+            <div class="player__top">
+                <div class="player-cover">
+                    <img src="https://images.unsplash.com/photo-1454372021569-4610db51e2e6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80" alt="" class="player-cover__img">
+                </div>
+                <div class="player-controls">
+                    <div class="player-controls__item">
+                        <svg class="icon"><use xlink:href="./img/icons.svg#icon-heart"></use></svg>
+                    </div>
+                    <div class="player-controls__item">
+                        <svg class="icon"><use xlink:href="./img/icons.svg#icon-share"></use></svg>
+                    </div>
+                    <div class="player-controls__item">
+                        <svg class="icon"><use xlink:href="./img/icons.svg#icon-infinity"></use></svg>
+                    </div>
+                    <div class="player-controls__item">
+                        <svg class="icon"><use xlink:href="./img/icons.svg#icon-shufle"></use></svg>
+                    </div>
+                    <div class="player-controls__item -xl">
+                        <svg class="icon"><use xlink:href="./img/icons.svg#icon-play"></use></svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <script src="./scripts/script.js"></script>
+</body>
+</html>
