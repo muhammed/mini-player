@@ -46,6 +46,39 @@ body {
     height: 300px;
     margin-left: -70px;
     flex-shrink: 0;
+    background: url(../img/1.jpg) no-repeat center;
+    background-size: cover;
+    border-radius: 15px;
+    position: relative;
+    z-index: 2;
+
+    &:before {
+      content: "";
+      background: inherit;
+      width: 100%;
+      height: 100%;
+      box-shadow: 0px 10px 40px 0px rgba(76, 70, 124, 0.5);
+      display: block;
+      z-index: 1;
+      position: absolute;
+      top: 30px;
+      transform: scale(0.9);
+      filter: blur(10px);
+      opacity: 0.9;
+      border-radius: 15px;
+    }
+
+    &:after {
+      content: "";
+      background: inherit;
+      width: 100%;
+      height: 100%;
+      box-shadow: 0px 10px 40px 0px rgba(76, 70, 124, 0.5);
+      display: block;
+      z-index: 2;
+      position: absolute;
+      border-radius: 15px;
+    }
 
     &__img {
       width: 100%;
@@ -96,7 +129,7 @@ body {
 }
 .progress {
   width: 100%;
-  margin-top: -20px;
+  margin-top: -15px;
   &__top {
     display: flex;
     align-items: flex-end;
@@ -115,7 +148,7 @@ body {
     font-weight: 700;
     font-size: 16px;
     opacity: 0.7;
-}
+  }
 }
 .progress__bar {
   height: 6px;

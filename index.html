@@ -20,7 +20,7 @@
       <div class="player">
         <div class="player__top">
           <div class="player-cover">
-            <img src="./img/1.png" alt="" class="player-cover__img" />
+            <!-- <img src="./img/1.png" alt="" class="player-cover__img" /> -->
           </div>
           <div class="player-controls">
             <div class="player-controls__item">
@@ -45,12 +45,13 @@
             </div>
             <div class="player-controls__item -xl js-play" @click="play">
               <svg class="icon">
-                <use xlink:href="./img/icons.svg#icon-play"></use>
+                <use xlink:href="./img/icons.svg#icon-pause" v-if="isTimerPlaying"></use>
+                <use xlink:href="./img/icons.svg#icon-play" v-else></use>
               </svg>
             </div>
           </div>
         </div>
-        <div class="progress" ref="progress" @click="clickProgress">
+        <div class="progress" ref="progress">
           <div class="progress__top">
             <div class="album-info">
               <div class="album-info__name">Muhammed Erdem</div>
@@ -58,7 +59,7 @@
             </div>
             <div class="progress__duration">{{ duration }}</div>
           </div>
-          <div class="progress__bar">
+          <div class="progress__bar" @click="clickProgress">
             <div class="progress__current" :style="{ width : barWidth }"></div>
           </div>
           <div class="progress__time">{{ currentTime }}</div>
