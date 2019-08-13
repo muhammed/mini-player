@@ -20,10 +20,13 @@
       <div class="player">
         <div class="player__top">
           <div class="player-cover">
+            <transition-group :name="transitionName">
+                <div class="player-cover__item" v-if="$index === currentTrackIndex" :style="{ backgroundImage: `url(${track.cover})` }"  v-for="(track, $index) in tracks" :key="$index"></div>
+            </transition-group>
             <!-- <img src="./img/1.png" alt="" class="player-cover__img" /> -->
           </div>
           <div class="player-controls">
-            <div class="player-controls__item">
+            <div class="player-controls__item -favorite" :class="{ active : currentTrack.favorited }" @click="favorite">
               <svg class="icon">
                 <use xlink:href="./img/icons.svg#icon-heart-o"></use>
               </svg>
@@ -33,14 +36,14 @@
                 <use xlink:href="./img/icons.svg#icon-share"></use>
               </svg>
             </div>
-            <div class="player-controls__item">
+            <div class="player-controls__item" @click="prevTrack">
               <svg class="icon">
-                <use xlink:href="./img/icons.svg#icon-infinity"></use>
+                <use xlink:href="./img/icons.svg#icon-prev"></use>
               </svg>
             </div>
-            <div class="player-controls__item">
+            <div class="player-controls__item" @click="nextTrack">
               <svg class="icon">
-                <use xlink:href="./img/icons.svg#icon-shufle"></use>
+                <use xlink:href="./img/icons.svg#icon-next"></use>
               </svg>
             </div>
             <div class="player-controls__item -xl js-play" @click="play">
@@ -53,9 +56,9 @@
         </div>
         <div class="progress" ref="progress">
           <div class="progress__top">
-            <div class="album-info">
-              <div class="album-info__name">Muhammed Erdem</div>
-              <div class="album-info__track">Back Home</div>
+            <div class="album-info" v-if="currentTrack">
+              <div class="album-info__name">{{ currentTrack.artist }}</div>
+              <div class="album-info__track">{{ currentTrack.name }}</div>
             </div>
             <div class="progress__duration">{{ duration }}</div>
           </div>
