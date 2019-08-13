@@ -202,5 +202,15 @@ new Vue({
       vm.nextTrack();
       this.isTimerPlaying = true;
     };
+
+    // this is optional (for preload covers)
+    for (let index = 0; index < this.tracks.length; index++) {
+      const element = this.tracks[index];
+      let link = document.createElement('link');
+      link.rel = "prefetch";
+      link.href = element.cover;
+      link.as = "image"
+      document.head.appendChild(link)
+    }
   }
 });
