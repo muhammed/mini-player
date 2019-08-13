@@ -14,65 +14,75 @@ new Vue({
       isTimerPlaying: false,
       tracks: [
         {
-          name: "The Upside 1",
-          artist: "Lindsey Stirling",
-          cover: "https://raw.githubusercontent.com/muhammederdem/mini-player/master/img/1.jpg",
-          source: "https://customhtml5video.000webhostapp.com/audio.mp3",
+          name: "Mekanın Sahibi",
+          artist: "Norm Ender",
+          cover:
+            "https://raw.githubusercontent.com/muhammederdem/mini-player/master/img/1.jpg",
+          source:
+            "https://raw.githubusercontent.com/muhammederdem/mini-player/master/mp3/1.mp3",
           favorited: false
         },
         {
           name: "The Upside 2",
           artist: "Lindsey Stirling",
-          cover: "https://raw.githubusercontent.com/muhammederdem/mini-player/master/img/2.jpg",
+          cover:
+            "https://raw.githubusercontent.com/muhammederdem/mini-player/master/img/2.jpg",
           source: "https://customhtml5video.000webhostapp.com/audio.mp3",
           favorited: true
         },
         {
           name: "The Upside 3",
           artist: "Lindsey Stirling",
-          cover: "https://raw.githubusercontent.com/muhammederdem/mini-player/master/img/3.jpg",
+          cover:
+            "https://raw.githubusercontent.com/muhammederdem/mini-player/master/img/3.jpg",
           source: "https://customhtml5video.000webhostapp.com/audio.mp3",
           favorited: false
         },
         {
           name: "The Upside 4",
           artist: "Lindsey Stirling",
-          cover: "https://raw.githubusercontent.com/muhammederdem/mini-player/master/img/4.jpg",
+          cover:
+            "https://raw.githubusercontent.com/muhammederdem/mini-player/master/img/4.jpg",
           source: "https://customhtml5video.000webhostapp.com/audio.mp3",
           favorited: false
         },
         {
           name: "The Upside 5",
           artist: "Lindsey Stirling",
-          cover: "https://raw.githubusercontent.com/muhammederdem/mini-player/master/img/5.jpg",
+          cover:
+            "https://raw.githubusercontent.com/muhammederdem/mini-player/master/img/5.jpg",
           source: "https://customhtml5video.000webhostapp.com/audio.mp3",
           favorited: true
         },
         {
           name: "The Upside 6",
           artist: "Lindsey Stirling",
-          cover: "https://raw.githubusercontent.com/muhammederdem/mini-player/master/img/6.jpg",
+          cover:
+            "https://raw.githubusercontent.com/muhammederdem/mini-player/master/img/6.jpg",
           source: "https://customhtml5video.000webhostapp.com/audio.mp3",
           favorited: false
         },
         {
           name: "The Upside 7",
           artist: "Lindsey Stirling",
-          cover: "https://raw.githubusercontent.com/muhammederdem/mini-player/master/img/7.jpg",
+          cover:
+            "https://raw.githubusercontent.com/muhammederdem/mini-player/master/img/7.jpg",
           source: "https://customhtml5video.000webhostapp.com/audio.mp3",
           favorited: true
         },
         {
           name: "The Upside 8",
           artist: "Lindsey Stirling",
-          cover: "https://raw.githubusercontent.com/muhammederdem/mini-player/master/img/8.jpg",
+          cover:
+            "https://raw.githubusercontent.com/muhammederdem/mini-player/master/img/8.jpg",
           source: "https://customhtml5video.000webhostapp.com/audio.mp3",
           favorited: false
         },
         {
           name: "The Upside 9",
           artist: "Lindsey Stirling",
-          cover: "https://raw.githubusercontent.com/muhammederdem/mini-player/master/img/9.jpg",
+          cover:
+            "https://raw.githubusercontent.com/muhammederdem/mini-player/master/img/9.jpg",
           source: "https://customhtml5video.000webhostapp.com/audio.mp3",
           favorited: false
         }
@@ -117,9 +127,6 @@ new Vue({
     },
     updateBar(x) {
       let progress = this.$refs.progress;
-      //calculate drag position
-      //and update video currenttime
-      //as well as progress bar
       let maxduration = this.audio.duration;
       let position = x - progress.offsetLeft;
       let percentage = (100 * position) / progress.offsetWidth;
@@ -139,21 +146,8 @@ new Vue({
       this.audio.pause();
       this.updateBar(e.pageX);
     },
-    nextTrack () {
-      console.log('next');
+    prevTrack() {
       this.transitionName = "scale-in";
-      this.isShowCover = false;
-      if (this.currentTrackIndex < this.tracks.length - 1) {
-        this.currentTrackIndex++;
-      } else {
-        this.currentTrackIndex = 0;
-      }
-      this.currentTrack = this.tracks[this.currentTrackIndex];
-      this.resetPlayer();
-    },
-    prevTrack () {
-      console.log('prev');
-      this.transitionName = "scale-out";
       this.isShowCover = false;
       if (this.currentTrackIndex > 0) {
         this.currentTrackIndex--;
@@ -163,19 +157,34 @@ new Vue({
       this.currentTrack = this.tracks[this.currentTrackIndex];
       this.resetPlayer();
     },
-    resetPlayer () {
-      this.audio.pause();
+    nextTrack() {
+      this.transitionName = "scale-out";
+      this.isShowCover = false;
+      if (this.currentTrackIndex < this.tracks.length - 1) {
+        this.currentTrackIndex++;
+      } else {
+        this.currentTrackIndex = 0;
+      }
+      this.currentTrack = this.tracks[this.currentTrackIndex];
+      this.resetPlayer();
+    },
+    resetPlayer() {
       this.barWidth = 0;
       this.circleLeft = 0;
       this.audio.currentTime = 0;
       this.audio.src = this.currentTrack.source;
-      this.isTimerPlaying = true;
       setTimeout(() => {
-        this.audio.play();
+        if(this.isTimerPlaying) {
+          this.audio.play();
+        } else {
+          this.audio.pause();
+        }
       }, 300);
     },
-    favorite () {
-      this.tracks[this.currentTrackIndex].favorited = !this.tracks[this.currentTrackIndex].favorited
+    favorite() {
+      this.tracks[this.currentTrackIndex].favorited = !this.tracks[
+        this.currentTrackIndex
+      ].favorited;
     }
   },
   created() {
@@ -190,8 +199,8 @@ new Vue({
       vm.generateTime();
     };
     this.audio.onended = function() {
-      vm.isTimerPlaying = false;
       vm.nextTrack();
+      this.isTimerPlaying = true;
     };
   }
 });
