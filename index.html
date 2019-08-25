@@ -30,11 +30,11 @@
                 <use xlink:href="./img/icons.svg#icon-heart-o"></use>
               </svg>
             </div>
-            <div class="player-controls__item">
+            <a :href="currentTrack.url" target="_blank" class="player-controls__item">
               <svg class="icon">
-                <use xlink:href="./img/icons.svg#icon-share"></use>
+                <use xlink:href="./img/icons.svg#icon-link"></use>
               </svg>
-            </div>
+            </a>
             <div class="player-controls__item" @click="prevTrack">
               <svg class="icon">
                 <use xlink:href="./img/icons.svg#icon-prev"></use>
