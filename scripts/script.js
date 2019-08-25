@@ -13,73 +13,63 @@ new Vue({
         {
           name: "Mekanın Sahibi",
           artist: "Norm Ender",
-          cover:
-            "https://raw.githubusercontent.com/muhammederdem/mini-player/master/img/1.jpg",
-          source:
-            "https://raw.githubusercontent.com/muhammederdem/mini-player/master/mp3/1.mp3",
+          cover: "https://raw.githubusercontent.com/muhammederdem/mini-player/master/img/1.jpg",
+          source: "https://raw.githubusercontent.com/muhammederdem/mini-player/master/mp3/1.mp3",
           favorited: false
         },
         {
           name: "The Upside 2",
           artist: "Lindsey Stirling",
-          cover:
-            "https://raw.githubusercontent.com/muhammederdem/mini-player/master/img/2.jpg",
+          cover: "https://raw.githubusercontent.com/muhammederdem/mini-player/master/img/2.jpg",
           source: "https://customhtml5video.000webhostapp.com/audio.mp3",
           favorited: true
         },
         {
           name: "The Upside 3",
           artist: "Lindsey Stirling",
-          cover:
-            "https://raw.githubusercontent.com/muhammederdem/mini-player/master/img/3.jpg",
+          cover: "https://raw.githubusercontent.com/muhammederdem/mini-player/master/img/3.jpg",
           source: "https://customhtml5video.000webhostapp.com/audio.mp3",
           favorited: false
         },
         {
           name: "The Upside 4",
           artist: "Lindsey Stirling",
-          cover:
-            "https://raw.githubusercontent.com/muhammederdem/mini-player/master/img/4.jpg",
+          cover: "https://raw.githubusercontent.com/muhammederdem/mini-player/master/img/4.jpg",
           source: "https://customhtml5video.000webhostapp.com/audio.mp3",
           favorited: false
         },
         {
           name: "The Upside 5",
           artist: "Lindsey Stirling",
-          cover:
-            "https://raw.githubusercontent.com/muhammederdem/mini-player/master/img/5.jpg",
+          cover: "https://raw.githubusercontent.com/muhammederdem/mini-player/master/img/5.jpg",
           source: "https://customhtml5video.000webhostapp.com/audio.mp3",
           favorited: true
         },
         {
           name: "The Upside 6",
           artist: "Lindsey Stirling",
-          cover:
-            "https://raw.githubusercontent.com/muhammederdem/mini-player/master/img/6.jpg",
+          cover: "https://raw.githubusercontent.com/muhammederdem/mini-player/master/img/6.jpg",
           source: "https://customhtml5video.000webhostapp.com/audio.mp3",
           favorited: false
         },
         {
           name: "The Upside 7",
           artist: "Lindsey Stirling",
-          cover:
-            "https://raw.githubusercontent.com/muhammederdem/mini-player/master/img/7.jpg",
+          cover: "https://raw.githubusercontent.com/muhammederdem/mini-player/master/img/7.jpg",
           source: "https://customhtml5video.000webhostapp.com/audio.mp3",
           favorited: true
         },
         {
           name: "The Upside 8",
           artist: "Lindsey Stirling",
-          cover:
-            "https://raw.githubusercontent.com/muhammederdem/mini-player/master/img/8.jpg",
+          cover: "https://raw.githubusercontent.com/muhammederdem/mini-player/master/img/8.jpg",
           source: "https://customhtml5video.000webhostapp.com/audio.mp3",
           favorited: false
         },
         {
           name: "The Upside 9",
           artist: "Lindsey Stirling",
-          cover:
-            "https://raw.githubusercontent.com/muhammederdem/mini-player/master/img/9.jpg",
+          cover: "https://raw.githubusercontent.com/muhammederdem/mini-player/master/img/9.jpg",
           source: "https://customhtml5video.000webhostapp.com/audio.mp3",
           favorited: false
         }

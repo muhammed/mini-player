@@ -17,9 +17,9 @@
   </head>
   <body>
     <div class="wrapper" id="app">
-      <div class="player" @mousemove="playerMouseMove" @mouseout="playerMouseOut" :style="{ transform: cardStyle }" ref="player">
+      <div class="player" @mousemove="playerMouseMove" @mouseout="playerMouseOut"  ref="player">
         <div class="player__top">
-          <div class="player-cover" ref="cover" :style="{ transform: coverStyle }">
+          <div class="player-cover" ref="cover" :style="{ transform: cardStyle }">
             <transition-group :name="transitionName">
                 <div class="player-cover__item" v-if="$index === currentTrackIndex" :style="{ backgroundImage: `url(${track.cover})` }"  v-for="(track, $index) in tracks" :key="$index"></div>
             </transition-group>
