@@ -84,9 +84,7 @@ new Vue({
       ],
       currentTrack: null,
       currentTrackIndex: 0,
-      transitionName: null,
-      cardStyle: null,
-      coverStyle: null
+      transitionName: null
     };
   },
   methods: {
@@ -182,20 +180,6 @@ new Vue({
       this.tracks[this.currentTrackIndex].favorited = !this.tracks[
         this.currentTrackIndex
       ].favorited;
-    },
-    playerMouseMove (event) {
-      var halfWidth = (this.$refs.player.clientWidth / 2);
-      var halfHeight = (this.$refs.player.clientHeight / 2);
-      var mouseX = (halfWidth - (event.pageX - this.$refs.player.offsetLeft));
-      var mouseY = (halfHeight - (event.pageY - this.$refs.player.offsetTop));
-      var degX  = ((mouseY / halfHeight) * 15) + 'deg'; //max degree = 15
-      var degY  = ((mouseX / halfWidth) * -15) + 'deg'; //max degree = 15
-      this.cardStyle = 'perspective(512px) translate3d(-2px, -2px, 0) rotateX('+ degX +') rotateY('+ degY +')';
-      // this.coverStyle = 'perspective(512px) translate3d(4px, 4px, 0) rotateX('+ degX +') rotateY('+ degY +')';
-    },
-    playerMouseOut () {
-      this.cardStyle = null;
-      this.coverStyle = null
     }
   },
   created() {
