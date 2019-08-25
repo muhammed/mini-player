@@ -25,6 +25,10 @@ body {
   min-height: 100vh;
   // background: url(../img/bg.png) no-repeat center;
   background-size: cover;
+  @media screen and (max-width: 700px), (max-height: 500px) {
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
 }
 
 .player {
@@ -36,12 +40,22 @@ body {
   box-shadow: 0px 15px 35px -5px rgba(50, 88, 130, 0.32);
   border-radius: 15px;
   padding: 30px;
-
+  @media screen and (max-width: 576px), (max-height: 500px) {
+    width: 95%;
+    padding: 20px;
+    margin-top: 75px;
+    min-height: initial;
+    padding-bottom: 30px;
+    max-width: 400px;
+  }
   &__top {
     display: flex;
     align-items: flex-start;
     position: relative;
     z-index: 4;
+    @media screen and (max-width: 576px), (max-height: 500px) {
+      flex-wrap: wrap;
+    }
   }
 
   &-cover {
@@ -55,6 +69,15 @@ body {
     // transform: perspective(512px) translate3d(0, 0, 0);
     // transition: all .4s cubic-bezier(.125, .625, .125, .875);
     z-index: 1;
+
+    @media screen and (max-width: 576px), (max-height: 500px) {
+      margin-top: -70px;
+      margin-bottom: 25px;
+      width: 290px;
+      height: 230px;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
     &__item {
       background-repeat: no-repeat;
@@ -114,6 +137,13 @@ body {
     flex-direction: column;
     align-items: center;
 
+    @media screen and (max-width: 576px), (max-height: 500px) {
+      flex-direction: row;
+      padding-left: 0;
+      width: 100%;
+      flex: unset;
+    }
+
     &__item {
       display: inline-flex;
       font-size: 30px;
@@ -127,6 +157,17 @@ body {
       justify-content: center;
       position: relative;
       transition: all 0.3s ease-in-out;
+
+      @media screen and (max-width: 576px), (max-height: 500px) {
+        font-size: 26px;
+        padding: 5px;
+        margin-right: 10px;
+        color: #acb8cc;
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        margin-bottom: 0;
+      }
 
       &::before {
         content: "";
@@ -142,12 +183,25 @@ body {
         transition: all 0.4s cubic-bezier(0.35, 0.57, 0.13, 0.88);
       }
 
-      &:hover {
-        color: #532ab9;
+      @media screen and (min-width: 500px) {
+        &:hover {
+          color: #532ab9;
 
-        &::before {
-          opacity: 1;
-          transform: scale(1.3);
+          &::before {
+            opacity: 1;
+            transform: scale(1.3);
+          }
+        }
+      }
+
+      @media screen and (max-width: 576px), (max-height: 500px) {
+        &:active {
+          color: #532ab9;
+
+          &::before {
+            opacity: 1;
+            transform: scale(1.3);
+          }
         }
       }
 
@@ -166,7 +220,11 @@ body {
         width: auto;
         height: auto;
         display: inline-flex;
-
+        @media screen and (max-width: 576px), (max-height: 500px) {
+          margin-left: auto;
+          font-size: 75px;
+          margin-right: 0;
+        }
         &:before {
           display: none;
         }
@@ -231,11 +289,19 @@ body {
   padding-right: 60px;
   user-select: none;
 
+  @media screen and (max-width: 576px), (max-height: 500px)  {
+    padding-right: 30px;
+  }
+
   &__name {
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 12px;
     line-height: 1.3em;
+    @media screen and (max-width: 576px), (max-height: 500px) {
+      font-size: 18px;
+      margin-bottom: 9px;
+    }
   }
   &__track {
     font-weight: 400;
@@ -243,6 +309,10 @@ body {
     opacity: 0.7;
     line-height: 1.3em;
     min-height: 52px;
+    @media screen and (max-width: 576px), (max-height: 500px)  {
+      font-size: 18px;
+      min-height: 50px;
+    }
   }
 }
 
@@ -261,9 +331,23 @@ body {
   font-size: 16px;
   transition: all .3s ease-in-out;
 
-  &:hover {
-    transform: scale(1.1);
-    box-shadow: 0px 17px 20px -6px rgba(36, 52, 70, 0.36);
+  @media screen and (min-width: 500px) {
+    &:hover {
+      transform: scale(1.1);
+      box-shadow: 0px 17px 20px -6px rgba(36, 52, 70, 0.36);
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    position: relative;
+    bottom: auto;
+    right: auto;
+    margin-top: 20px;
+
+    &:active {
+      transform: scale(1.1);
+      box-shadow: 0px 17px 20px -6px rgba(36, 52, 70, 0.36);
+    }
   }
 }
 
