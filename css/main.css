@@ -22,7 +22,6 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: url(../img/bg.png) no-repeat center;
   background-size: cover;
 }
 
@@ -30,13 +29,17 @@ body {
   background: #eef3f7;
   width: 410px;
   min-height: 480px;
-  box-shadow: 0px 55px 105px 10px rgba(76, 70, 124, 0.35);
+  box-shadow: 0px 15px 35px -5px rgba(50, 88, 130, 0.32);
   border-radius: 15px;
   padding: 30px;
+  transform: perspective(512px) translate3d(0, 0, 0);
+  transition: all 0.4s cubic-bezier(0.125, 0.625, 0.125, 0.875);
 }
 .player__top {
   display: flex;
   align-items: flex-start;
+  position: relative;
+  z-index: 4;
 }
 .player-cover {
   width: 300px;
@@ -46,6 +49,9 @@ body {
   position: relative;
   z-index: 2;
   border-radius: 15px;
+  transform: perspective(512px) translate3d(0, 0, 0);
+  transition: all 0.4s cubic-bezier(0.125, 0.625, 0.125, 0.875);
+  z-index: 1;
 }
 .player-cover__item {
   background-repeat: no-repeat;
