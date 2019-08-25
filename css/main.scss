@@ -132,7 +132,8 @@ body {
         margin-bottom: 0;
         font-size: 95px;
         // filter: drop-shadow(0 2px 8px rgba(172, 184, 204, 0.3));
-        filter: drop-shadow(0 9px 6px rgba(172, 184, 204, 0.35));
+        // filter: drop-shadow(0 9px 6px rgba(172, 184, 204, 0.35));
+        filter: drop-shadow(0 11px 6px rgba(172, 184, 204, 0.45));
         color: #fff;
       }
 
@@ -164,7 +165,7 @@ body {
     color: #71829e;
     font-weight: 700;
     font-size: 20px;
-    opacity: 0.7;
+    opacity: 0.5;
   }
   &__time {
     margin-top: 2px;
@@ -210,13 +211,34 @@ body {
   }
 }
 
+.github-btn {
+  position: absolute;
+  right: 40px;
+  bottom: 50px;
+  text-decoration: none;
+  padding: 15px 25px;
+  border-radius: 4px;
+  box-shadow: 0px 4px 30px -6px rgba(36, 52, 70, 0.65);
+  background: #24292e;
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-size: 16px;
+  transition: all .3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 17px 20px -6px rgba(36, 52, 70, 0.36);
+  }
+}
+
 //scale out
 
 .scale-out-enter-active {
-  transition: all .3s ease-in-out;
+  transition: all .35s ease-in-out;
 }
 .scale-out-leave-active {
-  transition: all .3s ease-in-out;
+  transition: all .35s ease-in-out;
 }
 .scale-out-enter {
   transform: scale(.55);
@@ -229,13 +251,14 @@ body {
   opacity: 0;
 }
 
+
 //scale in
 
 .scale-in-enter-active {
-  transition: all .3s ease-in-out;
+  transition: all .35s ease-in-out;
 }
 .scale-in-leave-active {
-  transition: all .3s ease-in-out;
+  transition: all .35s ease-in-out;
 }
 .scale-in-enter {
   transform: scale(1.2);
