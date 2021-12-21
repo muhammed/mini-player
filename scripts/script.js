@@ -101,8 +101,8 @@ new Vue({
       let width = (100 / this.audio.duration) * this.audio.currentTime;
       this.barWidth = width + "%";
       this.circleLeft = width + "%";
-      let durmin = Math.floor(this.audio.duration / 60);
-      let dursec = Math.floor(this.audio.duration - durmin * 60);
+      let durmin = Math.floor(this.audio.duration / 60) || 0;
+      let dursec = Math.floor(this.audio.duration - durmin * 60) || 0;
       let curmin = Math.floor(this.audio.currentTime / 60);
       let cursec = Math.floor(this.audio.currentTime - curmin * 60);
       if (durmin < 10) {
