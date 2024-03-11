@@ -1,1 +1,1 @@
-# mini-player
+# mini-playerz
